@@ -26,10 +26,10 @@ grad = function(X,Y,theta){
   
 }
 
-grad.descent = function(X,maxit){
+grad.descent = function(X,maxit,alpha){
   theta = matrix(c(0,0),nrow=1) #initialize the parameter
   
-  alpha = .0001 #ser learning rate
+  #alpha = .0001 #ser learning rate
   
   for (i in 1:maxit){
     theta = theta - alpha * grad(X,Y,theta)
@@ -42,4 +42,4 @@ grad.descent = function(X,maxit){
   return(theta)
 }
 
-print(grad.descent(X,30000000))
+print(grad.descent(X,30000000,.001))
